@@ -1,0 +1,835 @@
+<html>
+  <head>
+    <title> Pizza Restraunt</title>
+    <style>
+    body{
+      scroll-behavior: smooth;
+      background: linear-gradient(135deg, #111827, #1f2937, #000000);
+      overflow-x: hidden;
+    } 
+    
+    .navbar{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      gap: 17px;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      position: fixed;
+      background-color: white;
+      background: transparent;
+      backdrop-filter: blur(10px);
+      box-sizing: border-box;
+      border-radius: 14px;
+      overflow: hidden;
+      padding: 4px;
+    }
+    
+  .logo{
+    padding: 8px;
+    margin: 8px;
+  }  
+    
+    
+    .nav{
+      text-decoration: none;
+      
+    }
+    
+    .nav a{
+      color: cyan;
+      margin: 23px;
+      padding: 5px;
+      font-family: Arial, Sans-Serif;
+      text-decoration: none;
+    }
+    
+    .section{
+      width: 100%;
+      margin: auto;
+      min-height: 100vh;
+      margin-top: 34px;
+    }
+    
+    #home{
+      text-align: center;
+      padding: 5px;
+      margin-top: 69px;
+    }
+  .home-heading{
+    color: cyan;
+    padding: 8px;
+    margin-top: 43px;
+    font-size: 29px;
+  } 
+  .home-subheading{
+    color: cyan;
+    padding: 4px;
+    margin: auto;
+    font-size: 20px;
+  }
+  .typing-container{
+  text-align:center;
+  margin-top:20px;
+}
+
+.typing-container h2{
+  font-size:35px;
+  color:white;
+}
+
+#typing{
+  color:cyan;
+  border-right:3px solid cyan;
+  padding-right:5px;
+  animation:blink 0.7s infinite;
+}
+
+@keyframes blink{
+  50%{
+    border-color:transparent;
+  }
+}
+  .home-description{
+    color: white;
+    padding: 8px;
+    margin: auto;
+    font-weight: bold;
+    font-size: 23px;
+    font-family: Arial, Sans-Serif;
+  }
+  .home-buttons{
+    display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      padding: 42px;
+      gap: 20px;
+  }
+  
+   button{
+    text-align: center;
+    margin: 13px;
+    width: 160px;
+    height: 46px;
+    padding: 0px;
+    border: solid 2px white;
+    background-color: #f97316;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: Arial, Sans-Serif;
+    border-radius: 30px;
+    box-sizing: border-box;
+    transition: all 0.3 ease;
+  }
+  button:hover{
+    transform: scale(1.05);
+box-shadow: 0 0 20px rgba(239,68,68,0.5);
+  }
+button:active{
+    transform: scale(1.05);
+box-shadow: 0 0 20px rgba(239,68,68,0.5);
+  }  
+  
+  #about{
+      text-align: center;
+      padding: 5px;
+      margin-top: 69px;
+    }
+    .about-heading{
+      color: cyan;
+    padding: 8px;
+    margin-top: 49px;
+    font-size: 29px;
+    }
+    .about-paragraph{
+      color: white;
+    padding: 8px;
+    margin: auto;
+    font-weight: bold;
+    font-size: 23px;
+    font-family: Arial, Sans-Serif;
+    }
+    .highlight-container{
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+      align-items: center;
+    }
+    .highlight-card{
+      box-sizing: border-box;
+      border: solid 3px white;
+      border-radius: 14px;
+      color: white;
+      text-align: center;
+      background-color: #111;
+      min-height: 20vh;
+      width: 70%;
+    }
+    .highlight-card:hover{
+      transform: translateY(-18px);
+      background-color: green;
+    }
+    .highlight-card:active{
+      transform: translateY(-18px);
+      background-color: green;
+    }
+    
+    
+   #menu{
+      text-align: center;
+      padding: 5px;
+      margin-top: 69px;
+    } 
+  .menu-heading{
+    color: cyan;
+    padding: 8px;
+    margin-top: 43px;
+    font-size: 29px;
+  }   
+   .menu-container{
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+      align-items: center;
+    }
+    .menu-container h2{
+      color: yellow;
+    }
+    .menu-card{
+      box-sizing: border-box;
+      border: solid 3px white;
+      border-radius: 14px;
+      color: white;
+      text-align: center;
+      background-color: #111;
+      min-height: 29vh;
+      width: 70%;
+      transition: all 0.3s ease;
+    } 
+    
+    .menu-card:hover{
+      transform: translateY(-18px);
+      background-color: green;
+    }
+    .menu-card:active{
+      transform: translateY(-18px);
+      background-color: green;
+    }
+    .menu-card h3{
+      color: pink;
+    }
+    
+    /* GALLERY SECTION CSS */
+#gallery{
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #111827, #1f2937, #000000);
+  text-align: center;
+  color: white;
+  scroll-margin-top: 135px;
+  overflow: hideen;
+}
+
+#gallery h2{
+  font-size: 40px;
+  color: #ef4444; /* Red */
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+/* Grid Container */
+.gallery-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  overflow: hidden;
+}
+
+/* Images */
+.gallery-container img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 3px solid rgba(255,255,255,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Hover Effect */
+.gallery-container img:hover{
+  transform: scale(1.05);
+  border-color: #f97316; /* Orange */
+  box-shadow:
+    0 0 15px rgba(249,115,22,0.5),
+    0 0 30px rgba(239,68,68,0.3);
+}
+
+/* Lightbox Background */
+#lightbox{
+  display: none;               /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Full Screen Image */
+#lightbox-img{
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+}
+
+/* Close Button */
+#close{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#close:hover{
+  color: #ef4444;
+}
+   
+   
+   
+       #order{
+      text-align: center;
+      padding: 5px;
+      margin-top: 69px;
+      overflow: hidden;
+   }
+   .order-heading{
+     color: cyan;
+     text-align: center;
+      padding: 5px;
+      margin: 42px; 
+   }
+   .order-container{
+    text-align: center;
+      padding: 5px;
+      margin: auto; 
+   }
+   
+   
+   .order-form input,
+   .order-form textarea{
+     align-items: center;
+     padding: 8px;
+     margin: 12px;
+     text-align: center;
+     box-sizing: border-box;
+     border: solid 4px white;
+     border-radius: 13px;
+     background-color: #111111;
+     color: white;
+     width: 250px;
+     height: 40px;
+   }
+   .order-form button{
+     width: 250px;
+     height: 50px;
+     color: white;
+     text-align: center;
+     box-sizing: border-box;
+     border: solid 4px white;
+     border-radius: 30px;
+     background-color: red;
+   }
+
+
+
+    #contact{
+      text-align: center;
+      padding: 5px;
+      margin-top: 69px;
+      overflow: hidden;
+   }
+   .contact-heading{
+     color: cyan;
+     text-align: center;
+      padding: 5px;
+      margin: 42px; 
+   }
+   .contact-container{
+    text-align: center;
+      padding: 5px;
+      margin: auto; 
+   }
+   .contact-info{
+     text-align: center;
+      padding: 5px;
+      margin: 43px; 
+      color: white;
+   }
+   
+   .contact-form input,
+   .contact-form textarea{
+     align-items: center;
+     padding: 8px;
+     margin: 12px;
+     text-align: center;
+     box-sizing: border-box;
+     border: solid 4px white;
+     border-radius: 13px;
+     background-color: #111111;
+     color: white;
+     width: 250px;
+     height: 40px;
+   }
+   .contact-form button{
+     width: 250px;
+     height: 50px;
+     color: white;
+     text-align: center;
+     box-sizing: border-box;
+     border: solid 4px white;
+     border-radius: 30px;
+     background-color: red;
+   }
+   #footer{
+     min-height: 50vh;
+     width: 100%;
+  background:#000;
+  padding:40px 20px;
+  text-align:center;
+  color:white;
+}
+
+#footer h2{
+  color:cyan;
+  margin-bottom:10px;
+}
+
+#footer h3{
+  margin:10px 0;
+}
+
+.footer-links{
+  margin:20px 0;
+}
+
+.footer-links a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  transition:0.3s;
+}
+
+.footer-links a:hover{
+  color:cyan;
+}
+
+.contact-info-footer{
+  text-align: center;
+}
+
+.copyright{
+  margin-top:20px;
+  font-size: 19px;
+  color:#aaa;
+}
+ 
+/* Mobile Responsive */
+@media (max-width: 768px){
+  #gallery h2{
+    font-size: 30px;
+  }
+
+  .gallery-container{
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-container img{
+    height: 200px;
+  }
+  
+  
+  #lightbox-img{
+    max-width: 95%;
+    max-height: 85%;
+  }
+
+  #close{
+    font-size: 40px;
+    top: 15px;
+    right: 20px;
+  } 
+  
+}
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <h2>Lapinoz</h2>
+      </div>
+      <div class="nav">
+        <a href="#home"> HOME </a>
+        <a href="#about"> ABOUT </a>
+        <a href="#menu"> MENU </a>
+        <a href="#gallery"> GALLERY </a>
+        <a href="#order"> ORDER </a>
+        <a href="#contact"> CONTACT </a>
+        <a href="#map"> MAP </a>
+        <a href="#footer"> FOOTER</a>
+      </div>
+    </div>
+    <div class="section" id="home" data-aos="fade-up" data-aos-delay="400">
+     <div class="home-heading">
+       <h1>Welcome to Lapinoz Pizza House 🍕</h1>
+       <div class="typing-container">
+    <h2>We serve <span id="typing"></span></h2>
+  </div>
+     </div>
+     
+     <div class="home-subheading">
+       <h3>Hot, Fresh & Delicious Pizza Every Day!</h3>
+     </div>
+     
+     <div class="home-description">
+       <p>We serve tasty and cheesy pizzas made with fresh ingredients and lots of love.</p>
+     </div>
+    
+    <div class="home-buttons">
+      
+        <button type="order-now" a href="#order"> Order-Now</button>
+      
+        <button type="show-menu" a href="#menu"> Show-Menu</button>
+      
+    </div>
+    </div>
+    
+    <div class="section" id="about" data-aos-animation="zoom-in" data-aos-delay="400">
+      
+      <div class="about-heading">
+        <h2>About Us</h2>
+        </div>
+        
+      <div class="about-paragraph">
+        <p>
+          Lapinoz Pizza House is a modern pizza restaurant that serves fresh, cheesy and delicious pizzas. Our goal is to provide high-quality food and excellent customer service.
+        </p>
+      </div>
+      <div class="highlight-container">
+        
+        <h2 style="color: cyan;"> Highlights</h2>
+        
+       <div class="highlight-card">
+        <p>
+          <ul>
+            <li> Fresh Ingredients.</li>
+            <li> Fast Delivery.</li>
+            <li> Hygienic Kitchen.</li>
+            <li> Experienced Chefs.</li>
+          </ul>
+        </p>
+      </div>  
+      </div>
+    </div>
+    
+    <div class="section" id="menu">
+    
+    <div class="menu-heading">
+      <h2> Menu </h2>
+    </div> 
+    
+    <div class="menu-container">
+      
+     <h2> Our Special Menu </h2> 
+     
+     <div class="menu-card">
+       
+       <h3> Margherita Pizza </h3>
+       
+       <p>
+         <ul>
+           <li><b>Price: ₹199</b></li>
+           <li>Description: Classic pizza with cheese and tomato sauce.</li>
+           <li>Button: Order Now</li>
+         </ul>
+       </p>
+       
+     </div>
+     
+     <div class="menu-card">
+       
+       <h3>Farmhouse Pizza</h3>
+       
+       <p>
+         <ul>
+           <li><b>Price: ₹299</b></li>
+           <li>Description: Loaded with fresh vegetables and cheese.</li>
+           <li>Button: Order Now3</li>
+         </ul>
+       </p>
+     </div>
+     
+     <div class="menu-card">
+       
+       <h3>Cheese Burst Pizza</h3>
+       
+       <p>
+         <ul>
+           <li><b>Price: ₹299</b></li>
+           <li>Description: Loaded with fresh vegetables and cheese.</li>
+           <li>Button: Order Now</li>
+         </ul>
+       </p>
+     </div>
+     
+     <div class="menu-card">
+       
+      <h3>Veg Supreme Pizza</h3> 
+      
+      <p>
+        <ul>
+          <li><b>Price: ₹399</b></li>
+          <li>Description: Premium pizza with rich toppings.</li>
+          <li>Button: Order Now</li>
+        </ul>
+      </p>
+       
+     </div>
+    </div>
+    </div>
+    
+    <!-- GALLERY SECTION HTML -->
+<section id="gallery" class="section">
+  <h2>Pizza Gallery</h2>
+
+  <div class="gallery-container">
+    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Pizza 1">
+    <img src="https://images.unsplash.com/photo-1548365328-9f547fb0953b" alt="Pizza 2">
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Pizza 3">
+    <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="Pizza 4">
+    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Pizza 5">
+    <img src="https://images.unsplash.com/photo-1548365328-9f547fb0953b" alt="Pizza 6">
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span id="close">&times;</span>
+  <img id="lightbox-img" alt="Preview Image">
+</div>
+
+    
+    <div class="section" id="order">
+      <div class="order-container">
+      <div class="order-heading">
+        <h2> Order your Pizza </h2>
+      </div>
+      
+      <form class="order-form">
+         <input type="text" placeholder="Your Name" required>
+         <input type="text" placeholder="Type of pizza" required>
+          <input type="number" placeholder="quantity of pizza" required>
+         <input type="address" placeholder="Your Address" required>
+         <input type="tel" placeholder="Your Phone no." required>
+         <input type="date" placeholder="Today's date" required>
+         <textarea placeholder="Your Message" required></textarea>
+         <button type="submit"> Send Message</button>
+       </form>
+      </div>
+    </div>
+    
+    <div class="section" id="contact" data-aos="zoom-in" data-aos-delay="400">
+      
+     <div class="contact-heading">
+       <h2> Contact</h2>
+     </div>
+     <div class="contact-container">
+        <div class="contact-info">
+         
+         <h3> Get in touch</h3>
+         
+         <p>
+           <ul>
+    <li>📍 Address: Lapinoz pizza house</li>
+             <br>
+     <li>📞 Phone No.: +91XXXXXXX</li>
+             <br>
+     <li>📧 Email: info@rajanpizza.com</li>
+     <br>
+           </ul>
+         </p>
+          </div>
+       
+       <form class="contact-form">
+         <input type="text" placeholder="Your Name" required>
+         <input type="address" placeholder="Your Address" required>
+         <input type="tel" placeholder="Your Phone no." required>
+         <input type="date" placeholder="Today's date" required>
+         <textarea placeholder="Your Message" required></textarea>
+         <button type="submit"> Send Message</button>
+       </form>
+     </div> 
+    </div>
+    
+    <div class="section" id="map">
+      
+    </div>
+    
+    <div class="section" id="footer">
+
+  <h2>Rajan</h2>
+<br>
+<br>
+ <h3> Hot, Fresh & Delicious Pizza Every Day! </h3>
+ <br>
+
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">ABOUT</a>
+    <a href="#menu"> MENU </a>
+    <a href="#gallery"> GALLERY </a>
+    <a href="#order"> ORDER </a>
+    <a href="#contact"> CONTACT </a>
+     <a href="#map"> MAP </a>
+  </div>
+
+<div class="contact-info-footer">
+  <h2 style="color: ;"> contact</h2>
+  <br>
+  <br>
+        <p>
+          <ul>
+          <li> Address: Lapinoz pizza house</li>
+             <li>Phone No.: +91XXXXXXX</li>
+          </ul>
+        </p>
+      </div>
+
+  <div class="copyright">
+    <p>© 2026 Rajan Lapinoz Pizza House  | All Rights Reserved
+    </p>
+  </div>
+
+</div>
+    
+    <script>
+      
+     //Typing Effect 
+     
+     const texts = [
+   "Lapinoz Pizza",
+  "Cheesy Pizza 🍕",
+  "Fresh Ingredients 🧀",
+  "Fast Delivery 🚀"
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+
+  let currentText = texts[textIndex];
+
+  if(!isDeleting){
+    document.getElementById("typing").textContent =
+      currentText.substring(0, charIndex + 1);
+
+    charIndex++;
+
+    if(charIndex === currentText.length){
+      isDeleting = true;
+      setTimeout(typeEffect, 1200);
+      return;
+    }
+
+  } else {
+
+    document.getElementById("typing").textContent =
+      currentText.substring(0, charIndex - 1);
+
+    charIndex--;
+
+    if(charIndex === 0){
+      isDeleting = false;
+      textIndex++;
+
+      if(textIndex === texts.length){
+        textIndex = 0;
+      }
+    }
+  }
+
+  setTimeout(typeEffect, isDeleting ? 60 : 120);
+}
+
+typeEffect();
+      
+      
+  // Select all gallery images
+const images = document.querySelectorAll(".gallery-container img");
+
+// Lightbox elements
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("close");
+
+// Open lightbox on image click
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+  });
+});
+
+// Close when clicking X button
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+// Close when clicking outside the image
+lightbox.addEventListener("click", (e) => {
+  if (e.target !== lightboxImg) {
+    lightbox.style.display = "none";
+  }
+}); 
+ 
+ /*order form*/
+ 
+ document.querySelector(".order-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("🍕 Your pizza order has been placed successfully!");
+    this.reset();
+});
+ 
+ 
+ /*contact code*/
+ 
+ 
+document.querySelector(".contact-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("📩 Your message has been sent successfully!");
+    this.reset();
+});
+
+ 
+    
+  </script>  
+  </body>
+</html>
