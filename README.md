@@ -27,7 +27,7 @@ This project is created to practice frontend web development and build a real-wo
 
 ## 🌐 Live Demo
 
-Add your GitHub Pages link here.
+https://navodayanbandarajan.github.io/Pizza-Restaurant-Website/
 
 ## 👨‍💻 Developer
 
